@@ -1,0 +1,19 @@
+<!Doctype html>
+<html>
+<body>
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Master Signup</h2>
+  <form method="POST">
+    {% csrf_token %}
+    <input type="text" name="username" placeholder="Username">
+    <input type="email" name="email" placeholder="Email">
+    <input type="password" name="password" placeholder="Password">
+    <button type="submit">Sign up</button>
+  </form>
+  <p>Already have an account? <a href="{% url 'master_login' %}">Login</a></p>
+{% endblock %}
+</body>
+</html>
+

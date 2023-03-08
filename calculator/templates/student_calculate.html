@@ -1,0 +1,29 @@
+<!Doctype html>
+<html>
+<body>
+    {% extends "base.html" %}
+
+    {% block content %}
+      <h2>Calculate</h2>
+      <form method="POST">
+        {% csrf_token %}
+        <select name="left_operand">
+          {% for operand in operands %}
+            <option value="{{ operand }}">{{ operand }}</option>
+          {% endfor %}
+        </select>
+        <select name="operator">
+          {% for op in operators %}
+            <option value="{{ op }}">{{ op }}</option>
+          {% endfor %}
+        </select>
+        <select name="right_operand">
+          {% for operand in operands %}
+            <option value="{{ operand }}">{{ operand }}</option>
+          {% endfor %}
+        </select>
+        <button type="submit">Calculate</button>
+      </form>
+    {% endblock %}
+</body>
+</html>
